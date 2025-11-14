@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Отправляемые данные:', dataToSend);
 
         // ОТПРАВЛЯЕМ ДАННЫЕ НА СЕРВЕР
-        fetch('http://wedding-production-21e8.up.railway.app', {
+        fetch('https://wedding-production-21e8.up.railway.app/rsvp', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
