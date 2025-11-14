@@ -3,54 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Приглашение на свадьбу</title>
+    <title>Приглашение на нашу свадьбу</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>💕 Приглашение на свадьбу 💕</h1>
-            <p>Дорогие гости, мы рады пригласить вас на наше торжество!</p>
-        </div>
-
-        <div id="invitationForm" class="invitation-form">
-            <h2>Подтвердите ваше присутствие</h2>
-            
-            <div class="form-group">
-                <label for="guestName">Ваше имя и фамилия *</label>
-                <input type="text" id="guestName" required placeholder="Иван Иванов">
+        <header>
+            <h1>Дорогие гости!</h1>
+            <p class="subtitle">Мы рады пригласить вас на празднование нашего свадьбы!</p>
+            <div class="couple-names">
+                <span>Анна</span>
+                <i class="fas fa-heart"></i>
+                <span>Иван</span>
             </div>
+            <p class="date">15 июля 2024 года</p>
+        </header>
 
-            <div class="form-group">
-                <label>Выберите алкогольные напитки (можно несколько):</label>
-                <div class="alcohol-options" id="alcoholOptions">
-                    <!-- Alcohol options will be populated by JavaScript -->
+        <section class="form-section">
+            <h2>Подтвердите, пожалуйста, своё присутствие и выбор напитков до 1 июля</h2>
+            <form id="rsvpForm" action="https://eoctvdixklwrsgt.m.pipedream.net" method="POST">
+                <div class="form-group">
+                    <label for="name">Ваше имя и фамилия *</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
-            </div>
 
-            <div class="form-group">
-                <button type="button" class="btn btn-secondary" onclick="guestManager.addAdditionalGuest()">
-                    + Добавить дополнительного гостя
-                </button>
-            </div>
+                <div class="form-group">
+                    <label>Выберите напитки (можно несколько):</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="alcohol" value="Красное вино">
+                            <span class="checkmark"></span>
+                            Красное вино
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="alcohol" value="Белое вино">
+                            <span class="checkmark"></span>
+                            Белое вино
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="alcohol" value="Шампанское">
+                            <span class="checkmark"></span>
+                            Шампанское
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="alcohol" value="Виски">
+                            <span class="checkmark"></span>
+                            Виски
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="alcohol" value="Водка">
+                            <span class="checkmark"></span>
+                            Водка
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="alcohol" value="Коньяк">
+                            <span class="checkmark"></span>
+                            Коньяк
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="alcohol" value="Не пью алкоголь">
+                            <span class="checkmark"></span>
+                            Не пью алкоголь
+                        </label>
+                    </div>
+                </div>
 
-            <div id="additionalGuests"></div>
-
-            <div class="loading" id="loading">
-                <div class="spinner"></div>
-                <p>Отправляем ваш ответ...</p>
-            </div>
-
-            <button type="button" class="btn" onclick="formHandler.submitForm()">Отправить ответ</button>
-        </div>
-
-        <div id="successMessage" class="hidden">
-            <h2>✅ Спасибо за ваш ответ!</h2>
-            <p>Мы получили вашу информацию и с нетерпением ждём встречи на нашей свадьбе!</p>
-            <button type="button" class="btn" onclick="location.reload()">Заполнить еще раз</button>
-        </div>
+                <button type="submit" class="submit-btn">Отправить</button>
+            </form>
+            <div id="formMessage" style="display: none; margin-top: 20px; padding: 10px; border-radius: 5px; text-align: center;"></div>
+        </section>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const submitButton = this.querySelector('.submit-btn');
+            const messageDiv = document.getElementById('formMessage');
+
+            submitButton.textContent = 'Отправляется...';
+            submitButton.disabled = true;
+
+            // Отправляем данные напрямую в Pipedream
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    messageDiv.style.display = 'block';
+                    messageDiv.style.backgroundColor = '#d4edda';
+                    messageDiv.style.color = '#155724';
+                    messageDiv.textContent = 'Спасибо! Ваш ответ успешно отправлен. Ждём вас на празднике!';
+                    this.reset();
+                } else {
+                    throw new Error('Ошибка сети');
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+                messageDiv.style.display = 'block';
+                messageDiv.style.backgroundColor = '#f8d7da';
+                messageDiv.style.color = '#721c24';
+                messageDiv.textContent = 'Произошла ошибка при отправке. Пожалуйста, попробуйте ещё раз.';
+            })
+            .finally(() => {
+                submitButton.textContent = 'Отправить';
+                submitButton.disabled = false;
+            });
+        });
+    </script>
 </body>
 </html>
