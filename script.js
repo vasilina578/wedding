@@ -191,49 +191,54 @@ document.addEventListener('DOMContentLoaded', function() {
 
             console.log('Отправляемые данные:', dataToSend);
 
-            // ОТПРАВЛЯЕМ ДАННЫЕ НА GOOGLE APPS SCRIPT
-            const response = await fetch(SERVER_URL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(dataToSend)
-            });
+// ОТПРАВЛЯЕМ ДАННЫЕ НА GOOGLE APPS SCRIPT
+console.log('Начинаем отправку на URL:', SERVER_URL);
+console.log('Данные для отправки:', JSON.stringify(dataToSend, null, 2));
 
-            if (!response.ok) {
-                throw new Error('Ошибка сети: ' + response.status);
+fetch(SERVER_URL, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(dataToSend)
+})
+.then(response => {
+    console.log('Статус ответа:', response.status);
+    console.log('OK:', response.ok);
+    
+    if (!response.ok) {
+        throw new Error(`HTTP ошибка: ${response.status} ${response.statusText}`);
+    }
+    return response.json();
+})
+.then(data => {
+    console.log('Полный ответ от сервера:', data);
+    
+    if (data.success) {
+        responseMessage.textContent = data.message || 'Спасибо! Ваш ответ успешно отправлен. Ждём вас на свадьбе! 🎉';
+        responseMessage.className = 'success';
+        
+        setTimeout(() => {
+            if (responseMessage.className === 'success') {
+                responseMessage.classList.add('hidden');
             }
-
-            const data = await response.json();
-            console.log('Ответ от сервера:', data);
-            
-            if (data.success) {
-                responseMessage.textContent = data.message || 'Спасибо! Ваш ответ успешно отправлен. Ждём вас на свадьбе! 🎉';
-                responseMessage.className = 'success';
-                
-                // Автоматически скрываем сообщение об успехе через 5 секунд
-                setTimeout(() => {
-                    if (responseMessage.className === 'success') {
-                        responseMessage.classList.add('hidden');
-                    }
-                }, 5000);
-                
-                resetForm();
-            } else {
-                throw new Error(data.message || 'Ошибка при отправке');
-            }
-            
-        } catch (error) {
-            console.error('Ошибка:', error);
-            responseMessage.textContent = error.message || 'Произошла ошибка при отправке. Пожалуйста, попробуйте еще раз.';
-            responseMessage.className = 'error';
-            responseMessage.classList.remove('hidden');
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalBtnText;
-        }
-    });
-
+        }, 5000);
+        
+        resetForm();
+    } else {
+        throw new Error(data.message || 'Ошибка при отправке');
+    }
+})
+.catch(error => {
+    console.error('Ошибка fetch:', error);
+    responseMessage.textContent = error.message || 'Произошла ошибка при отправке. Пожалуйста, попробуйте еще раз.';
+    responseMessage.className = 'error';
+})
+.finally(() => {
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalBtnText;
+    responseMessage.classList.remove('hidden');
+});
     // Добавляем обработчик для сброса формы при нажатии Escape
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
