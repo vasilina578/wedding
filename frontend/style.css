@@ -100,15 +100,24 @@ body {
 .countdown-item:nth-child(4) .countdown-number { animation-delay: 1.5s; }
 
 /* Основные секции */
-.info, .rsvp {
+.info, .rsvp, .location {
     padding: clamp(40px, 8vw, 60px) clamp(20px, 5vw, 40px);
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     text-align: center;
 }
 
 .rsvp {
     background-color: #f9f9f9;
+}
+
+.location {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.location-content {
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 h2 {
@@ -305,7 +314,120 @@ button:active {
     text-align: center;
 }
 
-/* Адаптивность для таймера */
+/* Стили для секции с картой */
+.map-container {
+    margin-bottom: 40px;
+}
+
+.map-placeholder {
+    background: white;
+    border-radius: 16px;
+    padding: 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.map-text {
+    padding: 25px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.map-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3em, 4vw, 1.6em);
+    margin-bottom: 15px;
+    color: #d4a574;
+}
+
+.map-text p {
+    margin-bottom: 8px;
+    font-size: clamp(14px, 3vw, 16px);
+    color: #666;
+}
+
+.map-frame {
+    height: 200px;
+    width: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+
+.map-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.map-link {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.map-link:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-color: #d4a574;
+}
+
+/* Информация о транспорте */
+.transport-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.transport-item {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.transport-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.transport-icon {
+    font-size: 2em;
+    flex-shrink: 0;
+}
+
+.transport-text h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.transport-text p {
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Адаптивность для таймера и карты */
 @media (max-width: 768px) {
     .countdown {
         gap: 8px;
@@ -330,7 +452,7 @@ button:active {
         min-height: 70vh;
     }
     
-    .info, .rsvp {
+    .info, .rsvp, .location {
         padding: 30px 15px;
     }
     
@@ -345,6 +467,28 @@ button:active {
     .plus-one-fields {
         padding: 15px;
         margin-bottom: 15px;
+    }
+    
+    .map-frame {
+        height: 150px;
+    }
+    
+    .transport-info {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .transport-item {
+        padding: 20px;
+    }
+    
+    .map-text {
+        padding: 20px;
+    }
+    
+    .map-links {
+        flex-direction: column;
+        gap: 10px;
     }
 }
 
@@ -382,6 +526,21 @@ button:active {
     .alcohol-checkboxes {
         gap: 8px;
     }
+    
+    .map-frame {
+        height: 120px;
+        padding: 15px;
+    }
+    
+    .transport-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .transport-icon {
+        font-size: 1.8em;
+    }
 }
 
 /* Ландшафтная ориентация для мобильных */
@@ -402,6 +561,10 @@ button:active {
     .hero-content h1 {
         font-size: clamp(2em, 6vw, 3em);
     }
+    
+    .map-frame {
+        height: 120px;
+    }
 }
 
 /* Улучшения для touch-устройств */
@@ -420,7 +583,17 @@ button:active {
     }
     
     .countdown-number {
-        animation: none; /* Убираем анимацию на тач-устройствах для производительности */
+        animation: none;
+    }
+    
+    .transport-item:hover {
+        transform: none;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+    
+    .map-link:hover {
+        transform: none;
+        box-shadow: none;
     }
 }
 
@@ -433,6 +606,10 @@ button:active {
     
     .rsvp {
         background-color: #2d2d2d;
+    }
+    
+    .location {
+        background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
     }
     
     input, select {
@@ -453,5 +630,46 @@ button:active {
     .countdown-item {
         background: rgba(255, 255, 255, 0.1);
         border-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    .map-placeholder {
+        background: #333;
+    }
+    
+    .map-text {
+        border-bottom-color: #555;
+    }
+    
+    .map-text h3 {
+        color: #d4a574;
+    }
+    
+    .map-text p {
+        color: #ccc;
+    }
+    
+    .map-frame {
+        background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+    }
+    
+    .map-link {
+        background: rgba(255, 255, 255, 0.1);
+        color: #e1e1e1;
+    }
+    
+    .map-link:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+    
+    .transport-item {
+        background: #333;
+    }
+    
+    .transport-text h4 {
+        color: #e1e1e1;
+    }
+    
+    .transport-text p {
+        color: #ccc;
     }
 }
