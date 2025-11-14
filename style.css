@@ -39,29 +39,6 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.couple-names {
-    font-size: clamp(2em, 6vw, 3em);
-    font-weight: 300;
-    margin: 30px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    color: white;
-}
-
-.couple-names .fa-heart {
-    color: #ff6b6b;
-    font-size: 1.5em;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
 .date {
     font-size: clamp(1.3em, 4vw, 1.8em);
     font-weight: 300;
@@ -282,11 +259,6 @@ button:hover {
         padding: 25px 20px;
     }
     
-    .couple-names {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
     .checkbox-group {
         gap: 8px;
     }
@@ -303,10 +275,6 @@ button:hover {
 @media (max-width: 480px) {
     .hero-content h1 {
         font-size: 2em;
-    }
-    
-    .couple-names {
-        font-size: 1.5em;
     }
     
     .date {
