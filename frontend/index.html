@@ -283,6 +283,107 @@
             color: #5a4a42;
         }
         
+        /* СЕКЦИЯ ДРЕСС-КОДА */
+        .dress-code {
+            background-color: #f8f4f0;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 10px;
+            padding: 50px 30px;
+        }
+        
+        .dress-code h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #b8860b;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .dress-code h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 2px;
+            background: #b8860b;
+            margin: 15px auto;
+        }
+        
+        .dress-code-intro {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .color-palette {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .color-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .color-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .color-circle:hover {
+            transform: scale(1.1);
+        }
+        
+        .color-name {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #5a4a42;
+        }
+        
+        .dress-tips {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .dress-tips h3 {
+            color: #8b4513;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 1.4rem;
+        }
+        
+        .tips-list {
+            list-style-type: none;
+        }
+        
+        .tips-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .tips-list li:before {
+            content: '•';
+            color: #b8860b;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -3px;
+        }
+        
         /* Секция RSVP */
         .rsvp {
             background-color: #f8f4f0;
@@ -430,6 +531,15 @@
             .map-links {
                 flex-direction: column;
             }
+            
+            .color-palette {
+                gap: 15px;
+            }
+            
+            .color-circle {
+                width: 60px;
+                height: 60px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -453,6 +563,19 @@
             
             .alcohol-checkboxes {
                 grid-template-columns: 1fr;
+            }
+            
+            .color-palette {
+                gap: 10px;
+            }
+            
+            .color-circle {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .color-name {
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -599,6 +722,59 @@
                         <p>Прощание с гостями.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ДРЕСС-КОД -->
+    <section class="dress-code">
+        <div class="dress-code-content">
+            <h2>Дресс-код</h2>
+            <div class="dress-code-intro">
+                <p>Мы будем рады, если вы поддержите цветовую палитру нашей свадьбы в своих нарядах.</p>
+                <p>Это создаст гармоничную и элегантную атмосферу праздника.</p>
+            </div>
+            
+            <div class="color-palette">
+                <div class="color-item">
+                    <div class="color-circle" style="background-color: #8B4513;"></div>
+                    <div class="color-name">Шоколадный</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-circle" style="background-color: #D4AF37;"></div>
+                    <div class="color-name">Золотой</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-circle" style="background-color: #F5F5DC;"></div>
+                    <div class="color-name">Бежевый</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-circle" style="background-color: #8FBC8F;"></div>
+                    <div class="color-name">Тёмно-зелёный</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-circle" style="background-color: #DEB887;"></div>
+                    <div class="color-name">Песочный</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-circle" style="background-color: #CD853F;"></div>
+                    <div class="color-name">Персиковый</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-circle" style="background-color: #FFF8DC;"></div>
+                    <div class="color-name">Кремовый</div>
+                </div>
+            </div>
+            
+            <div class="dress-tips">
+                <h3>Рекомендации по стилю</h3>
+                <ul class="tips-list">
+                    <li>Для женщин: платья и костюмы в предложенной палитре</li>
+                    <li>Для мужчин: костюмы или рубашки с брюками в спокойных тонах</li>
+                    <li>Обувь: удобная, учитывая, что часть мероприятия пройдет в саду</li>
+                    <li>Аксессуары: золотые или деревянные детали будут прекрасно смотреться</li>
+                    <li>Избегайте: чёрного, ярко-красного и неоновых цветов</li>
+                </ul>
             </div>
         </div>
     </section>
