@@ -1,3 +1,6 @@
+// URL вашего Google Apps Script - ЗАМЕНИТЕ на ваш реальный URL
+const SERVER_URL = 'https://script.google.com/macros/s/AKfycbyR45fspxBAka9e_xOBLfezNJTPJ7obCWKYFbmVqbSDL_YyK7z6bP8aDlLj8OiC7HkK/exec';
+
 // Таймер до свадьбы
 function updateCountdown() {
     const weddingDate = new Date('2026-06-26T13:00:00').getTime();
@@ -96,31 +99,31 @@ document.addEventListener('DOMContentLoaded', function() {
             <h4>Спутник #${window.plusOneCount}</h4>
             <div class="form-group">
                 <label for="plusOneName${window.plusOneCount}">Имя и фамилия *</label>
-                <input type="text" id="plusOneName${window.plusOneCount}" name="plusOnes[${window.plusOneCount}][name]" required>
+                <input type="text" id="plusOneName${window.plusOneCount}" name="plusOneName${window.plusOneCount}" required>
             </div>
             <div class="form-group">
                 <label>Предпочтения по алкоголю *</label>
                 <div class="alcohol-checkboxes plus-one-alcohol">
                     <label class="checkbox-label">
-                        <input type="checkbox" name="plusOnes[${window.plusOneCount}][alcohol]" value="красное вино"> Красное вино
+                        <input type="checkbox" name="plusOneAlcohol${window.plusOneCount}" value="красное вино"> Красное вино
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="plusOnes[${window.plusOneCount}][alcohol]" value="белое вино"> Белое вино
+                        <input type="checkbox" name="plusOneAlcohol${window.plusOneCount}" value="белое вино"> Белое вино
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="plusOnes[${window.plusOneCount}][alcohol]" value="шампанское"> Шампанское
+                        <input type="checkbox" name="plusOneAlcohol${window.plusOneCount}" value="шампанское"> Шампанское
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="plusOnes[${window.plusOneCount}][alcohol]" value="водка"> Водка
+                        <input type="checkbox" name="plusOneAlcohol${window.plusOneCount}" value="водка"> Водка
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="plusOnes[${window.plusOneCount}][alcohol]" value="виски"> Виски
+                        <input type="checkbox" name="plusOneAlcohol${window.plusOneCount}" value="виски"> Виски
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="plusOnes[${window.plusOneCount}][alcohol]" value="коньяк"> Коньяк
+                        <input type="checkbox" name="plusOneAlcohol${window.plusOneCount}" value="коньяк"> Коньяк
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="plusOnes[${window.plusOneCount}][alcohol]" value="не пью"> Не пью алкоголь
+                        <input type="checkbox" name="plusOneAlcohol${window.plusOneCount}" value="не пью"> Не пью алкоголь
                     </label>
                 </div>
             </div>
@@ -140,6 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
 
         const submitBtn = document.getElementById('submitBtn');
+        const originalBtnText = submitBtn.textContent;
         submitBtn.disabled = true;
         submitBtn.textContent = 'Отправляем...';
 
@@ -154,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
             responseMessage.className = 'error';
             responseMessage.classList.remove('hidden');
             submitBtn.disabled = false;
-            submitBtn.textContent = 'Отправить ответ';
+            submitBtn.textContent = originalBtnText;
             return;
         }
 
@@ -195,20 +199,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             if (name && alcohol.length > 0) {
-                dataToSend.plusOnes.push({ name, alcohol });
+                dataToSend.plusOnes.push({ 
+                    name: name, 
+                    alcohol: alcohol 
+                });
             }
         });
 
         if (hasPlusOneErrors) {
             submitBtn.disabled = false;
-            submitBtn.textContent = 'Отправить ответ';
+            submitBtn.textContent = originalBtnText;
             return;
         }
 
         console.log('Отправляемые данные:', dataToSend);
 
-        // ОТПРАВЛЯЕМ ДАННЫЕ НА СЕРВЕР
-        fetch('https://wedding-production-21e8.up.railway.app/rsvp', {
+        // ОТПРАВЛЯЕМ ДАННЫЕ НА GOOGLE APPS SCRIPT
+        fetch(SERVER_URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -222,6 +229,8 @@ document.addEventListener('DOMContentLoaded', function() {
             return response.json();
         })
         .then(data => {
+            console.log('Ответ от сервера:', data);
+            
             if (data.success) {
                 responseMessage.textContent = data.message || 'Спасибо! Ваш ответ успешно отправлен. Ждём вас на свадьбе! 🎉';
                 responseMessage.className = 'success';
@@ -245,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .finally(() => {
             submitBtn.disabled = false;
-            submitBtn.textContent = 'Отправить ответ';
+            submitBtn.textContent = originalBtnText;
             responseMessage.classList.remove('hidden');
         });
     });
