@@ -5,17 +5,327 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Дмитрий & Василина - Свадьба</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Герой-секция -->
     <section class="hero">
         <div class="hero-content">
             <h1>Дмитрий & Василина</h1>
-            <p class="date">26 июня 2026 года</p>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">дней</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">часов</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">минут</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">секунд</div>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- Секция программы дня -->
+    <section class="schedule">
+        <div class="container">
+            <h2>Программа дня</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-time">15:00</div>
+                    <div class="timeline-content">
+                        <h3>Сбор гостей</h3>
+                        <p>Фуршет, знакомство, фотозона. Начало праздника в уютной атмосфере</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">16:00</div>
+                    <div class="timeline-content">
+                        <h3>Торжественная церемония</h3>
+                        <p>Бракосочетание и обмен клятвами любви</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">17:00</div>
+                    <div class="timeline-content">
+                        <h3>Праздничный банкет</h3>
+                        <p>Торжественный ужин, тосты и поздравления</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">19:00</div>
+                    <div class="timeline-content">
+                        <h3>Танцы и развлечения</h3>
+                        <p>Первый танец молодоженов, конкурсы и веселье</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">21:00</div>
+                    <div class="timeline-content">
+                        <h3>Сладкий стол</h3>
+                        <p>Свадебный торт и десерты</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">23:00</div>
+                    <div class="timeline-content">
+                        <h3>Завершение праздника</h3>
+                        <p>Прощание с гостями и красивое окончание вечера</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция локации -->
+    <section class="location">
+        <div class="container">
+            <h2>Локация</h2>
+            <div class="location-grid">
+                <div class="location-info">
+                    <div class="location-card">
+                        <h3><i class="fas fa-map-marker-alt"></i> Адрес мероприятия</h3>
+                        <p><strong>Усадьба "Комарово Village"</strong></p>
+                        <p>Минская область, Минский район, Сеницкий сельсовет</p>
+                        <p>д. Урожайная</p>
+                    </div>
+
+                    <div class="location-card">
+                        <h3><i class="fas fa-clock"></i> Время проведения</h3>
+                        <p><strong>Дата:</strong> 26 июня 2026 года</p>
+                        <p><strong>Начало:</strong> 15:00</p>
+                        <p><strong>Окончание:</strong> 23:00</p>
+                    </div>
+
+                    <div class="location-card">
+                        <h3><i class="fas fa-car"></i> Парковка</h3>
+                        <p>Для гостей предусмотрена бесплатная парковка на территории усадьбы</p>
+                        <p><strong>Въезд:</strong> с главной дороги</p>
+                        <p><strong>Парковка:</strong> бесплатная для всех гостей</p>
+                    </div>
+
+                    <div class="transport-options">
+                        <div class="transport-option">
+                            <i class="fas fa-car"></i>
+                            <h4>Личный автомобиль</h4>
+                            <p>Бесплатная парковка</p>
+                            <p>Cледуйте навигатору по адресу "Комарово Village"</p>
+                        </div>
+                        <div class="transport-option">
+                            <i class="fas fa-bus"></i>
+                            <h4>Общественный транспорт</h4>
+                            <p>Маршрутное такси №492 и №493</p>
+                            <p>Остановка "Поворот на Мачулищи", далее пешком.</p>
+                        </div>
+                        <div class="transport-option">
+                            <i class="fas fa-taxi"></i>
+                            <h4>Такси</h4>
+                            <p>Яндекс.Такси или Uber</p>
+                            <p>Приблизительная стоимость: 30-50 BYN</p>
+                        </div>
+                    </div>
+
+                    <div class="map-buttons">
+                        <a href="https://yandex.by/maps/org/komarovo_village/1166044862/?ll=27.517571%2C53.793931&z=15.35" target="_blank" class="map-btn yandex-btn">
+                            <i class="fab fa-yandex"></i>
+                            Открыть в Яндекс Картах
+                        </a>
+                        <a href="https://www.google.com/maps/place/%D0%91%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D0%BD%D1%8B%D0%B9+%D1%86%D0%B5%D0%BD%D1%82%D1%80+%D0%9A%D0%BE%D0%BC%D0%B0%D1%80%D0%BE%D0%B2%D0%BE+Village/@53.7893987,27.502628,17z/data=!3m1!4b1!4m6!3m5!1s0x46dbd7a2e67e07d3:0xc0fa8ecc5e7af101!8m2!3d53.7893988!4d27.5074989!16s%2Fg%2F11j13kmv9y?entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-btn google-btn">
+                            <i class="fab fa-google"></i>
+                            Открыть в Google Картах
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Секция дресс-кода -->
+    <section class="dress-code">
+        <div class="container">
+            <h2>Дресс-код</h2>
+            <div class="dress-code-content">
+                <p class="dress-code-description">
+                    Мы будем рады, если вы поддержите цветовую палитру нашего праздника в своих нарядах
+                </p>
+                
+                <div class="color-palette">
+                    <div class="color-circle">
+                        <div class="color-swatch" style="background-color: #8B4513;"></div>
+                        <span class="color-name">Шоколадный</span>
+                    </div>
+                    <div class="color-circle">
+                        <div class="color-swatch" style="background-color: #D4A574;"></div>
+                        <span class="color-name">Песочный</span>
+                    </div>
+                    <div class="color-circle">
+                        <div class="color-swatch" style="background-color: #F5DEB3;"></div>
+                        <span class="color-name">Бежевый</span>
+                    </div>
+                    <div class="color-circle">
+                        <div class="color-swatch" style="background-color: #FFF8DC;"></div>
+                        <span class="color-name">Кремовый</span>
+                    </div>
+                    <div class="color-circle">
+                        <div class="color-swatch" style="background-color: #8FBC8F;"></div>
+                        <span class="color-name">Салатовый</span>
+                    </div>
+                    <div class="color-circle">
+                        <div class="color-swatch" style="background-color: #98FB98;"></div>
+                        <span class="color-name">Светло-зеленый</span>
+                    </div>
+                    <div class="color-circle">
+                        <div class="color-swatch" style="background-color: #F0FFF0;"></div>
+                        <span class="color-name">Мятный</span>
+                    </div>
+                </div>
+
+                <div class="dress-code-tips">
+                    <div class="tip-card">
+                        <i class="fas fa-female"></i>
+                        <h4>Для женщин</h4>
+                        <p>Платья и костюмы в предложенной палитре, удобная обувь для танцев</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-male"></i>
+                        <h4>Для мужчин</h4>
+                        <p>Костюмы или рубашки с брюками в теплых тонах</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-tshirt"></i>
+                        <h4>Стиль</h4>
+                        <p>Smart casual - элегантно, комфортно, без ярких и неоновых тонов</p>
+                    </div>
+                </div>
+
+                <!-- Новый блок "Важно!" -->
+                <div class="important-notice">
+                    <div class="important-header">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h3>Важно!</h3>
+                    </div>
+                    <div class="important-content">
+                        <p>Мы готовим для вас сюрпризы и активные развлечения, поэтому рекомендуем выбирать удобную обувь и одежду, в которой будет комфортно двигаться. Праздник будет наполнен танцами, играми и весельем!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Секция погоды -->
+    <section class="weather">
+        <div class="container">
+            <h2>Погода на день свадьбы</h2>
+            <div class="weather-content">
+                <div class="weather-card">
+                    <div class="weather-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <div class="weather-info">
+                        <div class="temperature">+24°C</div>
+                        <div class="weather-description">Солнечно и ясно</div>
+                        <div class="weather-details">
+                            <div class="detail-item">
+                                <i class="fas fa-wind"></i>
+                                <span>Ветер: 3 м/с</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-tint"></i>
+                                <span>Влажность: 65%</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-umbrella"></i>
+                                <span>Осадки: 0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weather-recommendations">
+                    <div class="recommendation-card">
+                        <i class="fas fa-tshirt"></i>
+                        <h4>Что надеть</h4>
+                        <p>Легкая одежда из натуральных тканей, головные уборы от солнца</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <i class="fas fa-sun"></i>
+                        <h4>Солнечная защита</h4>
+                        <p>Рекомендуем солнцезащитный крем и солнечные очки</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <i class="fas fa-glass-cheers"></i>
+                        <h4>Напитки</h4>
+                        <p>Будет много прохладительных напитков и воды</p>
+                    </div>
+                </div>
+
+                <div class="weather-update">
+                    <p><i class="fas fa-info-circle"></i> Прогноз будет обновлён: 23 июня 2026</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Секция подарков -->
+    <section class="gifts">
+        <div class="container">
+            <h2>Пожелания о подарках</h2>
+            <div class="gifts-content">
+                <div class="gifts-intro">
+                    <p>Ваше присутствие на нашем празднике - уже самый ценный подарок! Но если вы хотите порадовать нас дополнительно, вот наши скромные пожелания:</p>
+                </div>
+
+                <div class="gifts-options">
+                    <div class="gift-option">
+                        <div class="gift-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Главный подарок</h3>
+                        <div class="gift-description">
+                            <p>Мы мечтаем о свадебном путешествии, поэтому будем рады конверту с вашими пожеланиями</p>
+                        </div>
+                        <div class="gift-reason">
+                            <i class="fas fa-globe-americas"></i>
+                            <span>Это поможет нам осуществить нашу мечту о путешествии</span>
+                        </div>
+                    </div>
+
+                    <div class="gift-option">
+                        <div class="gift-icon">
+                            <i class="fas fa-wine-bottle"></i>
+                        </div>
+                        <h3>Вместо цветов</h3>
+                        <div class="gift-description">
+                            <p>Будем рады бутылочке хорошего вина для нашей семейной коллекции</p>
+                        </div>
+                        <div class="gift-reason">
+                            <i class="fas fa-wine-glass-alt"></i>
+                            <span>Мы будем вспоминать вас за каждым бокалом</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gifts-note">
+                    <div class="note-content">
+                        <i class="fas fa-hands-heart"></i>
+                        <p>Самое главное для нас - видеть ваши счастливые лица в наш особенный день!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Секция подтверждения присутствия -->
     <section class="rsvp">
@@ -23,7 +333,6 @@
         <div class="form-section">
             <!-- Основной гость -->
             <div class="guest-section">
-                <h3>Основной гость</h3>
                 <div class="form-group">
                     <label for="name">Ваше имя и фамилия *</label>
                     <input type="text" id="name" required>
@@ -86,6 +395,35 @@
         const BOT_TOKEN = '8044113138:AAGY9F1YVBXbyKrqX_wXGsnn42IYYm0YAJ0';
         const CHAT_ID = '409598781';
         let guestCount = 0;
+
+        // Таймер обратного отсчета
+        function updateCountdown() {
+            const weddingDate = new Date('2026-06-26T15:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Запуск таймера
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
 
         // Функция добавления дополнительного гостя
         document.getElementById('addGuestBtn').addEventListener('click', function() {
