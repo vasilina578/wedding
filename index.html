@@ -916,35 +916,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Автопрокрутка (опционально)
-    let slideInterval = setInterval(() => {
-        if (currentSlide < totalSlides - 1) {
-            goToSlide(currentSlide + 1);
-        } else {
-            goToSlide(0);
-        }
-    }, 5000);
-
-    // Останавливаем автопрокрутку при наведении
-    const sliderContainer = document.querySelector('.slider-container');
-    sliderContainer.addEventListener('mouseenter', () => {
-        clearInterval(slideInterval);
-    });
-
-    sliderContainer.addEventListener('mouseleave', () => {
-        slideInterval = setInterval(() => {
-            if (currentSlide < totalSlides - 1) {
-                goToSlide(currentSlide + 1);
-            } else {
-                goToSlide(0);
-            }
-        }, 5000);
-    });
-
     // Инициализация
     updateButtons();
 });
-
     </script>
 </body>
 </html>
