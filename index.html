@@ -4,15 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Дмитрий & Василина - Свадьба</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Parisienne&family=Pacifico&family=Sacramento&family=Clicker+Script&family=Mr+De+Haviland&family=Petit+Formal+Script&family=Rouge+Script&family=Tangerine:wght@400;700&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;1,300&family=Caveat:wght@400&family=Playfair+Display:ital,wght@0,300;1,300&family=Bad+Script&family=Marck+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div class="png-container">
+                
+        <!-- Изображение 1 -->
+        <div class="png-element png-pos-2000-200 png-size-xxl png-opacity-30 png-img-1"></div>
+        <!-- Изображение 2 -->
+        <div class="png-element png-pos-1500-400 png-size-xxl png-opacity-30 png-img-10"></div>
+
+      
+    </div> <!-- Конец .png-container -->
+
+
     <!-- Герой-секция -->
     <section class="hero">
         <div class="hero-content">
             <h1>Дмитрий & Василина</h1>
+            <div class="wedding-date">26.06.2026</div>
+        </div>
+    </section>
+
+    <!-- Секция с таймером -->
+    <section class="countdown-section section">
+        <div class="container">
+            <div class="countdown-text before">
+                <div class="greeting-large">Дорогие друзья и близкие!</div>
+                Скоро наступит важный день в нашей жизни - мы станем семьёй!
+            </div>
+            
+            <div class="wedding-date-large">26.06.2026</div>
+            
+            <div class="countdown-text middle">До свадьбы осталось:</div>
+            
             <div class="countdown">
                 <div class="countdown-item">
                     <div class="countdown-number" id="days">00</div>
@@ -31,331 +60,232 @@
                     <div class="countdown-label">секунд</div>
                 </div>
             </div>
-            <div class="wedding-date">
-                26 июня 2026
+            
+            <div class="countdown-text after">
+                С радостью приглашаем вас на наше свадебное торжество!
             </div>
         </div>
     </section>
 
 
-    <!-- Секция галереи -->
-    <section class="gallery">
-        <div class="container">
-            <h2>Наша история в фотографиях</h2>
-            <div class="gallery-intro">
-                <p>Несколько моментов нашего счастья, которые мы хотим разделить с вами</p>
-            </div>
-
-            <div class="gallery-slider">
-                <div class="slider-container">
-                    <div class="slider-track">
-                        <!-- Фото 1 -->
-                        <div class="slide">
-                            <img src="./images/1.jpg" alt="Наше первое свидание">
-                            <div class="slide-caption">
-                                <h3>Первый совместный концерт</h3>
-                                <p>Тот самый день, когда всё только начиналось</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Фото 2 -->
-                        <div class="slide">
-                            <img src="./images/2.jpg" alt="Путешествие">
-                            <div class="slide-caption">
-                                <h3>Путешествие</h3>
-                                <p>Наши совместные приключения</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Фото 3 -->
-                        <div class="slide">
-                            <img src="./images/3.jpg" alt="Вечер в городе">
-                            <div class="slide-caption">
-                                <h3>Вечер в городе</h3>
-                                <p>Прогулки до утра и бесконечные разговоры</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Фото 4 -->
-                        <div class="slide">
-                            <img src="./images/4.jpg" alt="Уютные вечера">
-                            <div class="slide-caption">
-                                <h3>Уютные вечера</h3>
-                                <p>Веселье и смех</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Фото 5 -->
-                        <div class="slide">
-                            <img src="./images/5.jpg" alt="Момент предложения">
-                            <div class="slide-caption">
-                                <h3>Тот самый момент</h3>
-                                <p>Когда мы поняли, что хотим быть вместе всегда</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Навигация слайдера -->
-                <div class="slider-nav">
-                    <button class="nav-btn prev-btn">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <div class="slider-dots">
-                        <!-- Точки будут добавляться через JS -->
-                    </div>
-                    <button class="nav-btn next-btn">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
+<!-- Секция программы дня -->
+<section class="program-section">
+    <div class="container">
+        <h2 class="section-title">Программа дня</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-time">15:00</div>
+                <div class="timeline-content">
+                    <h3>Сбор гостей</h3>
                 </div>
             </div>
-
-            <div class="gallery-note">
-                <p>Каждая фотография - это история нашей любви, которая продолжается с вами!</p>
+            <div class="timeline-item">
+                <div class="timeline-time">16:00</div>
+                <div class="timeline-content">
+                    <h3>Торжественная церемония</h3>
+                </div>
             </div>
-        </div>
-    </section>
-
-
-    <!-- Секция программы дня -->
-    <section class="schedule">
-        <div class="container">
-            <h2>Программа дня</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-time">15:00</div>
-                    <div class="timeline-content">
-                        <h3>Сбор гостей</h3>
-                        <p>Фуршет, знакомство, фотозона. Начало праздника в уютной атмосфере</p>
-                    </div>
+            <div class="timeline-item">
+                <div class="timeline-time">17:00</div>
+                <div class="timeline-content">
+                    <h3>Праздничный банкет</h3>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-time">16:00</div>
-                    <div class="timeline-content">
-                        <h3>Торжественная церемония</h3>
-                        <p>Бракосочетание и обмен клятвами любви</p>
-                    </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">19:00</div>
+                <div class="timeline-content">
+                    <h3>Танцы и развлечения</h3>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-time">17:00</div>
-                    <div class="timeline-content">
-                        <h3>Праздничный банкет</h3>
-                        <p>Торжественный ужин, тосты и поздравления</p>
-                    </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">21:00</div>
+                <div class="timeline-content">
+                    <h3>Сладкий стол</h3>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-time">19:00</div>
-                    <div class="timeline-content">
-                        <h3>Танцы и развлечения</h3>
-                        <p>Первый танец молодоженов, конкурсы и веселье</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-time">21:00</div>
-                    <div class="timeline-content">
-                        <h3>Сладкий стол</h3>
-                        <p>Свадебный торт и десерты</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-time">23:00</div>
-                    <div class="timeline-content">
-                        <h3>Завершение праздника</h3>
-                        <p>Прощание с гостями и красивое окончание вечера</p>
-                    </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">23:00</div>
+                <div class="timeline-content">
+                    <h3>Завершение праздника</h3>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
+
 
     <!-- Секция локации -->
-    <section class="location">
+    <section class="location section">
         <div class="container">
-            <h2>Локация</h2>
+            <h2 class="section-title">Локация</h2>
             <div class="location-grid">
-                <div class="location-info">
-                    <div class="location-card">
-                        <h3><i class="fas fa-map-marker-alt"></i> Адрес мероприятия</h3>
-                        <p><strong>Усадьба "Комарово Village"</strong></p>
-                        <p>Минская область, Минский район, Сеницкий сельсовет</p>
-                        <p>д. Урожайная</p>
-                    </div>
+                <div class="location-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Адрес мероприятия</h3>
+                    <p><strong>Усадьба "Комарово Village"</strong></p>
+                    <p>Минская область, Минский район, Сеницкий сельсовет</p>
+                    <p>д. Урожайная</p>
+                </div>
 
-                    <div class="location-card">
-                        <h3><i class="fas fa-clock"></i> Время проведения</h3>
-                        <p><strong>Дата:</strong> 26 июня 2026 года</p>
-                        <p><strong>Начало:</strong> 15:00</p>
-                        <p><strong>Окончание:</strong> 23:00</p>
-                    </div>
+                <div class="location-card">
+                    <h3><i class="fas fa-clock"></i> Время проведения</h3>
+                    <p><strong>Дата:</strong> 26 июня 2026 года</p>
+                    <p><strong>Начало:</strong> 15:00</p>
+                    <p><strong>Окончание:</strong> 23:00</p>
+                </div>
 
-                    <div class="location-card">
-                        <h3><i class="fas fa-car"></i> Парковка</h3>
-                        <p>Для гостей предусмотрена бесплатная парковка на территории усадьбы</p>
-                        <p><strong>Въезд:</strong> с главной дороги</p>
-                        <p><strong>Парковка:</strong> бесплатная для всех гостей</p>
-                    </div>
+    <div class="location-image">
+        <img src="./images/k.jpg" alt="локация">
+    </div>
 
-                    <div class="transport-options">
-                        <div class="transport-option">
-                            <i class="fas fa-car"></i>
-                            <h4>Личный автомобиль</h4>
-                            <p>Бесплатная парковка</p>
-                            <p>Cледуйте навигатору по адресу "Комарово Village"</p>
-                        </div>
-                        <div class="transport-option">
-                            <i class="fas fa-bus"></i>
-                            <h4>Общественный транспорт</h4>
-                            <p>Маршрутное такси №492 и №493</p>
-                            <p>Остановка "Поворот на Мачулищи", далее пешком.</p>
-                        </div>
-                        <div class="transport-option">
-                            <i class="fas fa-taxi"></i>
-                            <h4>Такси</h4>
-                            <p>Яндекс.Такси или Uber</p>
-                            <p>Приблизительная стоимость: 30-50 BYN</p>
-                        </div>
+                <div class="transport-options">
+                    <div class="transport-option">
+                        <i class="fas fa-car"></i>
+                        <h4>Личный автомобиль</h4>
+                        <p>Бесплатная парковка</p>
+                        <p>Cледуйте навигатору по адресу "Комарово Village"</p>
                     </div>
+                    <div class="transport-option">
+                        <i class="fas fa-bus"></i>
+                        <h4>Общественный транспорт</h4>
+                        <p>Маршрутное такси №492 и №493</p>
+                        <p>Остановка "Поворот на Мачулищи", далее пешком.</p>
+                    </div>
+                    <div class="transport-option">
+                        <i class="fas fa-taxi"></i>
+                        <h4>Такси</h4>
+                        <p>Яндекс.Такси или Uber</p>
+                        <p>Приблизительная стоимость: 30-50 BYN</p>
+                    </div>
+                </div>
 
-                    <div class="map-buttons">
-                        <a href="https://yandex.by/maps/org/komarovo_village/1166044862/?ll=27.517571%2C53.793931&z=15.35" target="_blank" class="map-btn yandex-btn">
-                            <i class="fab fa-yandex"></i>
-                            Открыть в Яндекс Картах
-                        </a>
-                        <a href="https://www.google.com/maps/place/%D0%91%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D0%BD%D1%8B%D0%B9+%D1%86%D0%B5%D0%BD%D1%82%D1%80+%D0%9A%D0%BE%D0%BC%D0%B0%D1%80%D0%BE%D0%B2%D0%BE+Village/@53.7893987,27.502628,17z/data=!3m1!4b1!4m6!3m5!1s0x46dbd7a2e67e07d3:0xc0fa8ecc5e7af101!8m2!3d53.7893988!4d27.5074989!16s%2Fg%2F11j13kmv9y?entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-btn google-btn">
-                            <i class="fab fa-google"></i>
-                            Открыть в Google Картах
-                        </a>
-                    </div>
+                <div class="map-buttons">
+                    <a href="https://yandex.by/maps/org/komarovo_village/1166044862/?ll=27.517571%2C53.793931&z=15.35" target="_blank" class="map-btn">
+                        <i class="fab fa-yandex"></i>
+                        Открыть в Яндекс Картах
+                    </a>
+                    <a href="https://www.google.com/maps/place/%D0%91%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D0%BD%D1%8B%D0%B9+%D1%86%D0%B5%D0%BD%D1%82%D1%80+%D0%9A%D0%BE%D0%BC%D0%B0%D1%80%D0%BE%D0%B2%D0%BE+Village/@53.7893987,27.502628,17z/data=!3m1!4b1!4m6!3m5!1s0x46dbd7a2e67e07d3:0xc0fa8ecc5e7af101!8m2!3d53.7893988!4d27.5074989!16s%2Fg%2F11j13kmv9y?entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-btn">
+                        <i class="fab fa-google"></i>
+                        Открыть в Google Картах
+                    </a>
                 </div>
             </div>
         </div>
     </section>
-
 
     <!-- Секция дресс-кода -->
-    <section class="dress-code">
+    <section class="dress-code section">
         <div class="container">
-            <h2>Дресс-код</h2>
-            <div class="dress-code-content">
-                <p class="dress-code-description">
-                    Мы будем рады, если вы поддержите цветовую палитру нашего праздника в своих нарядах
-                </p>
-                
-                <div class="color-palette">
-                    <div class="color-circle">
-                        <div class="color-swatch" style="background-color: #E8D8C8;"></div>
-                        <span class="color-name">Пудровый беж</span>
-                    </div>
-                    <div class="color-circle">
-                        <div class="color-swatch" style="background-color: #D4E6D4;"></div>
-                        <span class="color-name">Мятный крем</span>
-                    </div>
-                    <div class="color-circle">
-                        <div class="color-swatch" style="background-color: #F5E6E8;"></div>
-                        <span class="color-name">Розовый кварц</span>
-                    </div>
-                    <div class="color-circle">
-                        <div class="color-swatch" style="background-color: #E6E6FA;"></div>
-                        <span class="color-name">Лавандовый</span>
-                    </div>
-                    <div class="color-circle">
-                        <div class="color-swatch" style="background-color: #F0F8FF;"></div>
-                        <span class="color-name">Небесно-голубой</span>
-                    </div>
+            <h2 class="section-title">Дресс-код</h2>
+            <p class="dress-code-description">
+                Мы будем рады, если вы поддержите цветовую палитру нашего праздника в своих нарядах
+            </p>
+            
+            <div class="color-palette">
+                <div class="color-circle">
+                    <div class="color-swatch" style="background-color: #E8D8C8;"></div>
+                    <span class="color-name">Пудровый беж</span>
                 </div>
-
-                <div class="dress-code-tips">
-                    <div class="tip-card">
-                        <i class="fas fa-female"></i>
-                        <h4>Для женщин</h4>
-                        <p>Платья и костюмы в предложенной палитре, удобная обувь для танцев. Пожалуйста, не выбирайте белый цвет для своего наряда</p>
-                    </div>
-                    <div class="tip-card">
-                        <i class="fas fa-male"></i>
-                        <h4>Для мужчин</h4>
-                        <p>Костюмы или рубашки с брюками в теплых тонах</p>
-                    </div>
-                    <div class="tip-card">
-                        <i class="fas fa-tshirt"></i>
-                        <h4>Стиль</h4>
-                        <p>Smart casual - элегантно, комфортно, без ярких и неоновых тонов</p>
-                    </div>
+                <div class="color-circle">
+                    <div class="color-swatch" style="background-color: #D4E6D4;"></div>
+                    <span class="color-name">Мятный крем</span>
                 </div>
+                <div class="color-circle">
+                    <div class="color-swatch" style="background-color: #F5E6E8;"></div>
+                    <span class="color-name">Розовый кварц</span>
+                </div>
+                <div class="color-circle">
+                    <div class="color-swatch" style="background-color: #E6E6FA;"></div>
+                    <span class="color-name">Лавандовый</span>
+                </div>
+                <div class="color-circle">
+                    <div class="color-swatch" style="background-color: #F0F8FF;"></div>
+                    <span class="color-name">Небесно-голубой</span>
+                </div>
+            </div>
 
-                <!-- Новый блок "Важно!" -->
-                <div class="important-notice">
-                    <div class="important-header">
-                        <i class="fas fa-exclamation-circle"></i>
-                        <h3>Важно!</h3>
-                    </div>
-                    <div class="important-content">
-                        <p>Мы готовим для вас сюрпризы и активные развлечения, поэтому рекомендуем выбирать удобную обувь и одежду, в которой будет комфортно двигаться. Праздник будет наполнен танцами, играми и весельем!</p>
-                    </div>
+            <div class="dress-code-tips">
+                <div class="tip-card">
+                    <i class="fas fa-female"></i>
+                    <h4>Для женщин</h4>
+                    <p>Платья и костюмы в предложенной палитре, удобная обувь для танцев. Пожалуйста, не выбирайте белый цвет для своего наряда</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-male"></i>
+                    <h4>Для мужчин</h4>
+                    <p>Костюмы или рубашки с брюками в теплых тонах</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-tshirt"></i>
+                    <h4>Стиль</h4>
+                    <p>Smart casual - элегантно, комфортно, без ярких и неоновых тонов</p>
+                </div>
+            </div>
+
+            <div class="important-notice">
+                <div class="important-header">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <h3>Важно!</h3>
+                </div>
+                <div class="important-content">
+                    <p>Мы готовим для вас сюрпризы и активные развлечения, поэтому рекомендуем выбирать удобную обувь и одежду, в которой будет комфортно двигаться. Праздник будет наполнен танцами, играми и весельем!</p>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- Секция погоды -->
-    <section class="weather">
+    <!-- Секция подарков -->
+    <section class="gifts section">
         <div class="container">
-            <h2>Погода на день свадьбы</h2>
-            <div class="weather-content">
-                <div class="weather-card">
-                    <div class="weather-icon">
-                        <i class="fas fa-sun"></i>
+            <h2 class="section-title">Пожелания о подарках</h2>
+            <div class="gifts-intro">
+                <p>Ваше присутствие на нашем празднике - уже самый ценный подарок! Но если вы хотите порадовать нас дополнительно, вот наши скромные пожелания:</p>
+            </div>
+
+            <div class="gifts-options">
+                <div class="gift-option">
+                    <div class="gift-icon">
+                        <i class="fas fa-heart"></i>
                     </div>
-                    <div class="weather-info">
-                        <div class="temperature">+24°C</div>
-                        <div class="weather-description">Солнечно и ясно</div>
-                        <div class="weather-details">
-                            <div class="detail-item">
-                                <i class="fas fa-wind"></i>
-                                <span>Ветер: 3 м/с</span>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-tint"></i>
-                                <span>Влажность: 65%</span>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-umbrella"></i>
-                                <span>Осадки: 0%</span>
-                            </div>
-                        </div>
+                    <h3>Главный подарок</h3>
+                    <div class="gift-description">
+                        <p>Мы мечтаем о свадебном путешествии, поэтому будем рады конверту с вашими пожеланиями</p>
+                    </div>
+                    <div class="gift-reason">
+                        <i class="fas fa-globe-americas"></i>
+                        <span>Это поможет нам осуществить нашу мечту о путешествии</span>
                     </div>
                 </div>
 
-                <div class="weather-recommendations">
-                    <div class="recommendation-card">
-                        <i class="fas fa-tshirt"></i>
-                        <h4>Что надеть</h4>
-                        <p>Легкая одежда из натуральных тканей, головные уборы от солнца</p>
+                <div class="gift-option">
+                    <div class="gift-icon">
+                        <i class="fas fa-wine-bottle"></i>
                     </div>
-                    <div class="recommendation-card">
-                        <i class="fas fa-sun"></i>
-                        <h4>Солнечная защита</h4>
-                        <p>Рекомендуем солнцезащитный крем и солнечные очки</p>
+                    <h3>Вместо цветов</h3>
+                    <div class="gift-description">
+                        <p>Будем рады бутылочке хорошего вина для нашей семейной коллекции</p>
                     </div>
-                    <div class="recommendation-card">
-                        <i class="fas fa-glass-cheers"></i>
-                        <h4>Напитки</h4>
-                        <p>Будет много охлаждённых напитков и воды</p>
+                    <div class="gift-reason">
+                        <i class="fas fa-wine-glass-alt"></i>
+                        <span>Мы будем вспоминать вас за каждым бокалом</span>
                     </div>
                 </div>
+            </div>
 
-                <div class="weather-update">
-                    <p><i class="fas fa-info-circle"></i> Прогноз будет обновлён: 23 июня 2026</p>
+            <div class="gifts-note">
+                <div class="note-content">
+                    <i class="fas fa-hands-heart"></i>
+                    <p>Самое главное для нас - видеть ваши счастливые лица в наш особенный день!</p>
                 </div>
             </div>
         </div>
     </section>
-
 
     <!-- Секция FAQ -->
-    <section class="faq">
+    <section class="faq section">
         <div class="container">
-            <h2>Частые вопросы</h2>
+            <h2 class="section-title">Частые вопросы</h2>
             <div class="faq-intro">
                 <p>Здесь вы найдете ответы на самые популярные вопросы о нашем празднике</p>
             </div>
@@ -431,139 +361,92 @@
                     </div>
                 </div>
             </div>
-    </section>
-
-
-    <!-- Секция подарков -->
-    <section class="gifts">
-        <div class="container">
-            <h2>Пожелания о подарках</h2>
-            <div class="gifts-content">
-                <div class="gifts-intro">
-                    <p>Ваше присутствие на нашем празднике - уже самый ценный подарок! Но если вы хотите порадовать нас дополнительно, вот наши скромные пожелания:</p>
-                </div>
-
-                <div class="gifts-options">
-                    <div class="gift-option">
-                        <div class="gift-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <h3>Главный подарок</h3>
-                        <div class="gift-description">
-                            <p>Мы мечтаем о свадебном путешествии, поэтому будем рады конверту с вашими пожеланиями</p>
-                        </div>
-                        <div class="gift-reason">
-                            <i class="fas fa-globe-americas"></i>
-                            <span>Это поможет нам осуществить нашу мечту о путешествии</span>
-                        </div>
-                    </div>
-
-                    <div class="gift-option">
-                        <div class="gift-icon">
-                            <i class="fas fa-wine-bottle"></i>
-                        </div>
-                        <h3>Вместо цветов</h3>
-                        <div class="gift-description">
-                            <p>Будем рады бутылочке хорошего вина для нашей семейной коллекции</p>
-                        </div>
-                        <div class="gift-reason">
-                            <i class="fas fa-wine-glass-alt"></i>
-                            <span>Мы будем вспоминать вас за каждым бокалом</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gifts-note">
-                    <div class="note-content">
-                        <i class="fas fa-hands-heart"></i>
-                        <p>Самое главное для нас - видеть ваши счастливые лица в наш особенный день!</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
-
-
 
     <!-- Секция подтверждения присутствия -->
-    <section class="rsvp">
-        <h2>Подтвердите ваше присутствие</h2>
-        <div class="form-section">
-            <!-- Основной гость -->
-            <div class="guest-section">
-                <div class="form-group">
-                    <label for="name">Ваше имя и фамилия *</label>
-                    <input type="text" id="name" required>
-                </div>
+    <section class="rsvp section">
+        <div class="container">
+            <h2 class="section-title">Подтвердите ваше присутствие</h2>
+            <div class="form-section">
+                <!-- Основной гость -->
+                <div class="guest-section">
+                    <div class="form-group">
+                        <label for="name">Ваше имя и фамилия *</label>
+                        <input type="text" id="name" required>
+                    </div>
 
-                <div class="form-group">
-                    <label>Выберите напитки (можно несколько):</label>
-                    <div class="checkbox-group" id="mainAlcoholGroup">
-                        <label class="checkbox-label">
-                            <input type="checkbox" value="Красное вино">
-                            Красное вино
+                    <div class="form-group">
+                        <label>Выберите напитки (можно несколько):</label>
+                        <div class="checkbox-group" id="mainAlcoholGroup">
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="Красное вино">
+                                Красное вино
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="Белое вино">
+                                Белое вино
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="Шампанское">
+                                Шампанское
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="Виски">
+                                Виски
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="Водка">
+                                Водка
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="Коньяк">
+                                Коньяк
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="Не пью алкоголь">
+                                Не пью алкоголь
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Блок аллергии -->
+                    <div class="form-group">
+                        <label class="allergy-label">
+                            <input type="checkbox" id="mainAllergyCheckbox">
+                            Есть аллергия?
                         </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" value="Белое вино">
-                            Белое вино
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" value="Шампанское">
-                            Шампанское
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" value="Виски">
-                            Виски
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" value="Водка">
-                            Водка
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" value="Коньяк">
-                            Коньяк
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" value="Не пью алкоголь">
-                            Не пью алкоголь
-                        </label>
+                        <div class="allergy-input-container" id="mainAllergyContainer" style="display: none;">
+                            <label for="mainAllergyList">Пожалуйста, напишите список продуктов, на которые у вас аллергия:</label>
+                            <input type="text" id="mainAllergyList" placeholder="Например: орехи, молоко, морепродукты...">
+                        </div>
                     </div>
                 </div>
-            </div>
 
-
-                <!-- Блок аллергии для основного гостя -->
-                <div class="form-group">
-                    <label class="allergy-label">
-                        <input type="checkbox" id="mainAllergyCheckbox">
-                        Есть аллергия?
-                    </label>
-                    <div class="allergy-input-container" id="mainAllergyContainer" style="display: none;">
-                        <label for="mainAllergyList">Пожалуйста, напишите список продуктов, на которые у вас аллергия:</label>
-                        <input type="text" id="mainAllergyList" placeholder="Например: орехи, молоко, морепродукты...">
-                    </div>
+                <!-- Дополнительные гости -->
+                <div id="additionalGuests">
+                    <!-- Дополнительные гости будут добавляться здесь -->
                 </div>
-            </div>
 
-            <!-- Дополнительные гости -->
-            <div id="additionalGuests">
-                <!-- Дополнительные гости будут добавляться здесь -->
-            </div>
+                <!-- Кнопка добавления гостя -->
+                <div class="form-group">
+                    <button type="button" id="addGuestBtn" class="add-guest-btn">
+                        <i class="fas fa-plus"></i> Добавить ещё гостя
+                    </button>
+                </div>
 
-            <!-- Кнопка добавления гостя -->
-            <div class="form-group">
-                <button type="button" id="addGuestBtn" class="add-guest-btn">
-                    <i class="fas fa-plus"></i> Добавить ещё гостя
-                </button>
+                <button type="button" id="submitBtn" class="submit-btn">Отправить все ответы</button>
+                
+                <div id="formMessage"></div>
             </div>
-
-            <button type="button" id="submitBtn" class="submit-btn">Отправить все ответы</button>
-            
-            <div id="formMessage"></div>
         </div>
     </section>
 
-    <script>
+</body>
+</html>
+
+
+<script>
 const BOT_TOKEN = '8044113138:AAGY9F1YVBXbyKrqX_wXGsnn42IYYm0YAJ0';
 const CHAT_ID = '409598781';
 let guestCount = 0;
