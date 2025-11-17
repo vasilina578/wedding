@@ -137,16 +137,75 @@ body {
 .png-flip-x { transform: scaleX(-1); }
 .png-flip-y { transform: scaleY(-1); }
 
-/* === АДАПТИВНОСТЬ === */
+/* === АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ === */
 @media (max-width: 768px) {
     /* Уменьшаем размеры на мобильных */
+    .png-size-xs { width: 60px; height: 45px; }
+    .png-size-sm { width: 90px; height: 68px; }
+    .png-size-md { width: 120px; height: 90px; }
+    .png-size-lg { width: 160px; height: 120px; }
     .png-size-xl { width: 200px; height: 150px; }
     .png-size-xxl { width: 250px; height: 190px; }
     
-    /* Скрываем некоторые элементы на мобильных */
+    /* Корректируем позиции для мобильных */
+    .png-pos-10-5 { top: 8%; left: 3%; }
+    .png-pos-20-10 { top: 18%; left: 5%; }
+    .png-pos-5-90 { top: 4%; left: 92%; }
+    .png-pos-80-8 { top: 82%; left: 5%; }
+    .png-pos-70-85 { top: 72%; left: 88%; }
+    .png-pos-15-50 { top: 12%; left: 50%; transform: translateX(-50%); }
+    .png-pos-50-20 { top: 50%; left: 15%; transform: translateY(-50%); }
+    .png-pos-30-80 { top: 28%; left: 85%; }
+    .png-pos-60-15 { top: 62%; left: 12%; }
+    .png-pos-25-70 { top: 22%; left: 75%; }
+    .png-pos-75-25 { top: 78%; left: 20%; }
+    
+    /* Корректируем пиксельные позиции для мобильных */
+    .png-pos-200-50 { top: 150px; left: 30px; }
+    .png-pos-500-300 { top: 400px; left: 200px; }
+    .png-pos-800-100 { top: 600px; left: 70px; }
+    .png-pos-1200-200 { top: 900px; left: 150px; }
+    .png-pos-1500-400 { top: 1100px; right: 30px; }
+    .png-pos-2000-200 { top: 1400px; left: 30px; }
+    
+    /* Скрываем некоторые элементы на мобильных если нужно */
     .png-mobile-hide { display: none; }
 }
 
+@media (max-width: 480px) {
+    /* Дополнительные корректировки для маленьких экранов */
+    .png-size-xs { width: 50px; height: 38px; }
+    .png-size-sm { width: 70px; height: 53px; }
+    .png-size-md { width: 90px; height: 68px; }
+    .png-size-lg { width: 120px; height: 90px; }
+    .png-size-xl { width: 150px; height: 113px; }
+    .png-size-xxl { width: 180px; height: 135px; }
+    
+    /* Еще более точные позиции для очень маленьких экранов */
+    .png-pos-10-5 { top: 7%; left: 2%; }
+    .png-pos-20-10 { top: 17%; left: 3%; }
+    .png-pos-5-90 { top: 3%; left: 94%; }
+    .png-pos-80-8 { top: 83%; left: 3%; }
+    
+    .png-pos-200-50 { top: 120px; left: 20px; }
+    .png-pos-500-300 { top: 350px; left: 150px; }
+    .png-pos-800-100 { top: 500px; left: 50px; }
+    .png-pos-1200-200 { top: 700px; left: 100px; }
+    .png-pos-1500-400 { top: 900px; right: 20px; }
+    .png-pos-2000-200 { top: 1100px; left: 20px; }
+}
+
+/* === ОБЕСПЕЧИВАЕМ ПРАВИЛЬНОЕ РАСПОЛОЖЕНИЕ В BODY === */
+body {
+    position: relative; /* Чтобы .png-container позиционировался относительно body */
+}
+
+/* === ПРЕДОТВРАЩАЕМ МЕРЦАНИЕ === */
+.png-element {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
 
 /* Общие стили секций */
 .section {
