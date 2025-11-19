@@ -111,6 +111,9 @@ body {
     position: relative;
     overflow: hidden;
     padding-bottom: 30px;
+    /* Фикс для Telegram WebView */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 
 .hero::before {
@@ -123,6 +126,9 @@ body {
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(4px);
     z-index: 1;
+    /* Фикс для Telegram WebView */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 
 .hero-content {
