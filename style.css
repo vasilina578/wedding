@@ -11,6 +11,7 @@ body {
     line-height: 1.6;
     font-size: 16px;
     background: #F5F5F0;
+    position: relative;
 }
 
 /* Цветовая палитра */
@@ -18,194 +19,46 @@ body {
     --bleached-sand: #F5F5F0;
     --mocha-mousse: #A58F7E;
     --stone-grey: #B5BDB3;
+    
     /* Темные пастельные оливковые оттенки */
-
-    --sage-dusk: #798472;       /* Используется */ 
-    --moss-stone: #697460;      /* Темнее основного на 45% */
-    --deep-olive: #5C6654;      /* Темнее основного на 50% */
+    --sage-dusk: #798472;
+    --moss-stone: #697460;
+    --deep-olive: #5C6654;
     
     /* Серо-зеленые оттенки */
-    --dusty-sage: #A3AA9F;      /* Более серый вариант */
-    --slate-green: #8F988D;     /* Серо-зеленый средний */
-    --charcoal-moss: #7A8378;   /* Темный серо-зеленый */
-    --storm-olive: #676E64;     /* Очень темный серо-зеленый */
+    --dusty-sage: #A3AA9F;
+    --slate-green: #8F988D;
+    --charcoal-moss: #7A8378;
+    --storm-olive: #676E64;
     
     /* Акцентные темные оттенки */
-    --dark-sage: #75806C;       /* Насыщенный темный шалфей */
-    --vintage-olive: #6B7562;   /* Винтажный оливковый */
-    --military-sage: #626B59;   /* Военный шалфей */
+    --dark-sage: #75806C;
+    --vintage-olive: #6B7562;
+    --military-sage: #626B59;
+    
     /* Теплые пастельные бордовые */
-    --warm-blush: #DCB0B3;      /* Теплый румянец */
-   --soft-terracotta: #CA969A; /* Мягкая терракота */
-   --muted-russet: #B87C82;    /* Приглушенный рыжевато-бордовый */
-   --dusty-cinnamon: #A6646B;  /* Пыльная корица */
-
-
-   --mahogany-brown: #4D2121;     /* Используется */
-
-
+    --warm-blush: #DCB0B3;
+    --soft-terracotta: #CA969A;
+    --muted-russet: #B87C82;
+    --dusty-cinnamon: #A6646B;
+    --mahogany-brown: #4D2121;
+    
+    /* Холодные пастельные бордовые */
+    --cool-berry: #E5D5DA;
+    --frosted-wine: #D4BCC5;
+    --icy-burgundy: #C2A3B0;
+    --slate-mauve: #AF8A9C;
+    
+    /* Винные оттенки */
+    --vintage-burgundy: #6A2E2E;
+    --royal-wine: #5C2828;
+    --wine-blush: #E8D2D3;
+    --soft-berry: #D6B4B6;
 }
-
 
 /* =========================================== */
-/* УНИВЕРСАЛЬНАЯ СИСТЕМА PNG ИЗОБРАЖЕНИЙ */
-/* НЕЗАВИСИМЫЕ ОТ СЕКЦИЙ - ТОЛЬКО FIXED POSITION */
+/* ОСНОВНЫЕ СТИЛИ СЕКЦИЙ */
 /* =========================================== */
-
-/* Основной контейнер для всех PNG элементов - АБСОЛЮТНОЕ ПОЗИЦИОНИРОВАНИЕ */
-.png-container {
-    position: absolute; /* Абсолютное позиционирование без занимания места */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9997;
-    pointer-events: none; /* Не блокирует клики */
-}
-
-/* Базовый класс для всех PNG элементов */
-.png-element {
-    position: absolute;     /* Абсолютное позиционирование относительно .png-container */
-    z-index: 9998;         /* Высокий уровень - поверх секций */
-    pointer-events: none;  /* Не блокирует клики */
-    image-rendering: high-quality; /* Сохраняет качество */
-    background-size: contain;     /* Сохраняет пропорции */
-    background-repeat: no-repeat; /* Не повторяет изображение */
-    background-position: center;  /* Центрирует изображение */
-}
-
-/* === КАСТОМНОЕ ПОЗИЦИОНИРОВАНИЕ ОТНОСИТЕЛЬНО ВСЕЙ СТРАНИЦЫ === */
-/* Формат: .png-pos-[top]-[left] - позиция относительно всей высоты страницы */
-.png-pos-10-5 { top: 10vh; left: 5%; }
-.png-pos-20-10 { top: 20vh; left: 10%; }
-.png-pos-5-90 { top: 5vh; left: 90%; }
-.png-pos-80-8 { top: 80vh; left: 8%; }
-.png-pos-70-85 { top: 70vh; left: 85%; }
-.png-pos-15-50 { top: 15vh; left: 50%; transform: translateX(-50%); }
-.png-pos-50-20 { top: 50vh; left: 20%; transform: translateY(-50%); }
-.png-pos-30-80 { top: 30vh; left: 80%; }
-.png-pos-60-15 { top: 60vh; left: 15%; }
-.png-pos-25-70 { top: 25vh; left: 70%; }
-.png-pos-75-25 { top: 75vh; left: 25%; }
-
-/* Позиции в пикселях для точного позиционирования */
-.png-pos-200-50 { top: 200px; left: 50px; }
-.png-pos-500-300 { top: 500px; left: 300px; }
-.png-pos-800-100 { top: 800px; left: 100px; }
-.png-pos-1200-200 { top: 1200px; left: 200px; }
-.png-pos-1500-400 { top: 1000px; right: 50px; }
-.png-pos-2000-200 { top: 1000px; left: 50px; }
-
-
-/* === РАЗМЕРЫ (масштаб) === */
-.png-size-xs { width: 80px; height: 60px; }
-.png-size-sm { width: 120px; height: 90px; }
-.png-size-md { width: 180px; height: 135px; }
-.png-size-lg { width: 250px; height: 190px; }
-.png-size-xl { width: 350px; height: 260px; }
-.png-size-xxl { width: 500px; height: 375px; }
-
-/* === ПРОЗРАЧНОСТЬ === */
-.png-opacity-10 { opacity: 0.1; }
-.png-opacity-20 { opacity: 0.2; }
-.png-opacity-30 { opacity: 0.3; }
-.png-opacity-40 { opacity: 0.4; }
-.png-opacity-50 { opacity: 0.5; }
-.png-opacity-60 { opacity: 0.6; }
-.png-opacity-70 { opacity: 0.7; }
-.png-opacity-80 { opacity: 0.8; }
-.png-opacity-90 { opacity: 0.9; }
-.png-opacity-100 { opacity: 1; }
-
-
-/* === ВАШИ PNG ИЗОБРАЖЕНИЯ === */
-.png-img-1 { background-image: url('./images/1.png'); }
-.png-img-10 { background-image: url('./images/29.png'); }
-.png-img-3 { background-image: url('./images/3.png'); }
-.png-img-4 { background-image: url('./images/4.png'); }
-.png-img-5 { background-image: url('./images/5.png'); }
-.png-img-6 { background-image: url('./images/6.png'); }
-.png-img-7 { background-image: url('./images/7.png'); }
-/* ДОБАВЛЯЙТЕ НОВЫЕ ИЗОБРАЖЕНИЯ: */
-/* .png-img-8 { background-image: url('./images/ваше-изображение.png'); } */
-
-/* === ТРАНСФОРМАЦИИ === */
-.png-rotate-45 { transform: rotate(45deg); }
-.png-rotate-90 { transform: rotate(90deg); }
-.png-rotate-180 { transform: rotate(180deg); }
-.png-rotate-270 { transform: rotate(270deg); }
-.png-flip-x { transform: scaleX(-1); }
-.png-flip-y { transform: scaleY(-1); }
-
-/* === АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ === */
-@media (max-width: 768px) {
-    /* Уменьшаем размеры на мобильных */
-    .png-size-xs { width: 60px; height: 45px; }
-    .png-size-sm { width: 90px; height: 68px; }
-    .png-size-md { width: 120px; height: 90px; }
-    .png-size-lg { width: 160px; height: 120px; }
-    .png-size-xl { width: 200px; height: 150px; }
-    .png-size-xxl { width: 250px; height: 190px; }
-    
-    /* Корректируем позиции для мобильных */
-    .png-pos-10-5 { top: 8%; left: 3%; }
-    .png-pos-20-10 { top: 18%; left: 5%; }
-    .png-pos-5-90 { top: 4%; left: 92%; }
-    .png-pos-80-8 { top: 82%; left: 5%; }
-    .png-pos-70-85 { top: 72%; left: 88%; }
-    .png-pos-15-50 { top: 12%; left: 50%; transform: translateX(-50%); }
-    .png-pos-50-20 { top: 50%; left: 15%; transform: translateY(-50%); }
-    .png-pos-30-80 { top: 28%; left: 85%; }
-    .png-pos-60-15 { top: 62%; left: 12%; }
-    .png-pos-25-70 { top: 22%; left: 75%; }
-    .png-pos-75-25 { top: 78%; left: 20%; }
-    
-    /* Корректируем пиксельные позиции для мобильных */
-    .png-pos-200-50 { top: 150px; left: 30px; }
-    .png-pos-500-300 { top: 400px; left: 200px; }
-    .png-pos-800-100 { top: 600px; left: 70px; }
-    .png-pos-1200-200 { top: 900px; left: 150px; }
-    .png-pos-1500-400 { top: 1100px; right: 30px; }
-    .png-pos-2000-200 { top: 1400px; left: 30px; }
-    
-    /* Скрываем некоторые элементы на мобильных если нужно */
-    .png-mobile-hide { display: none; }
-}
-
-@media (max-width: 480px) {
-    /* Дополнительные корректировки для маленьких экранов */
-    .png-size-xs { width: 50px; height: 38px; }
-    .png-size-sm { width: 70px; height: 53px; }
-    .png-size-md { width: 90px; height: 68px; }
-    .png-size-lg { width: 120px; height: 90px; }
-    .png-size-xl { width: 150px; height: 113px; }
-    .png-size-xxl { width: 180px; height: 135px; }
-    
-    /* Еще более точные позиции для очень маленьких экранов */
-    .png-pos-10-5 { top: 7%; left: 2%; }
-    .png-pos-20-10 { top: 17%; left: 3%; }
-    .png-pos-5-90 { top: 3%; left: 94%; }
-    .png-pos-80-8 { top: 83%; left: 3%; }
-    
-    .png-pos-200-50 { top: 120px; left: 20px; }
-    .png-pos-500-300 { top: 350px; left: 150px; }
-    .png-pos-800-100 { top: 500px; left: 50px; }
-    .png-pos-1200-200 { top: 700px; left: 100px; }
-    .png-pos-1500-400 { top: 900px; right: 20px; }
-    .png-pos-2000-200 { top: 1100px; left: 20px; }
-}
-
-/* === ОБЕСПЕЧИВАЕМ ПРАВИЛЬНОЕ РАСПОЛОЖЕНИЕ В BODY === */
-body {
-    position: relative; /* Чтобы .png-container позиционировался относительно body */
-}
-
-/* === ПРЕДОТВРАЩАЕМ МЕРЦАНИЕ === */
-.png-element {
-    will-change: transform;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-}
 
 /* Общие стили секций */
 .section {
@@ -245,10 +98,9 @@ body {
     opacity: 0.5;
 }
 
-/* Герой-секция - СТАТИЧНАЯ с улучшенным качеством */
+/* Герой-секция */
 .hero {
     background: url('./images/hero.jpg') center/cover no-repeat;
-    /* Фон теперь установлен напрямую, а не через ::before */
     min-height: 100vh;
     display: flex;
     align-items: flex-end;
@@ -268,8 +120,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3); /* Легкая затемняющая overlay */
-    backdrop-filter: blur(4px); /* Размытие поверх фона */
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
     z-index: 1;
 }
 
@@ -277,7 +129,7 @@ body {
     position: relative;
     z-index: 2;
     max-width: 800px;
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
 }
 
 .hero-content h1 {
@@ -336,8 +188,6 @@ body {
     line-height: 1.2;
 }
 
-
-
 /* Таймер */
 .countdown {
     display: flex;
@@ -381,7 +231,6 @@ body {
     font-weight: 400;
     opacity: 0.8;
 }
-
 
 /* Секция программы дня */
 .program-section {
@@ -440,8 +289,6 @@ body {
     opacity: 0.3;
 }
 
-
-
 /* Секция локации */
 .location-section {
     position: relative;
@@ -472,10 +319,6 @@ body {
     color: var(--mahogany-brown);
 }
 
-.location-card h3::first-letter {
-    text-transform: uppercase;
-}
-
 .location-card p {
     line-height: 1.7;
     margin-bottom: 12px;
@@ -498,9 +341,6 @@ body {
     height: 100%;
     object-fit: cover;
 }
-
-
-
 
 /* Транспортные опции */
 .transport-options {
@@ -525,7 +365,7 @@ body {
 }
 
 .transport-option i {
-    font-size: 50px !important;
+    font-size: 50px;
     margin-bottom: 20px;
     opacity: 0.9;
     color: var(--mahogany-brown);
@@ -533,7 +373,7 @@ body {
 
 .transport-option h4 {
     margin-bottom: 12px;
-    font-size: 25px !important;
+    font-size: 25px;
     font-weight: 400;
     text-transform: lowercase;
     color: var(--mahogany-brown);
@@ -544,12 +384,11 @@ body {
 }
 
 .transport-option p {
-    font-size: 18px !important;
+    font-size: 18px;
     margin-bottom: 8px;
     opacity: 0.8;
     color: var(--royal-wine);
 }
-
 
 /* Кнопки карт */
 .map-buttons {
@@ -567,7 +406,7 @@ body {
     padding: 20px 28px;
     text-decoration: none;
     font-weight: 400;
-    font-size: 18px !important;
+    font-size: 18px;
     text-align: center;
     background: transparent;
     color: var(--mahogany-brown);
@@ -608,54 +447,6 @@ body {
     transform: scale(1.1);
 }
 
-/* Адаптивность для мобильных */
-@media (max-width: 768px) {
-    .transport-options {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .map-buttons {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .location-card {
-        padding: 35px 25px;
-    }
-    
-    .transport-option {
-        padding: 25px 15px;
-    }
-    
-    .map-btn {
-        padding: 18px 24px;
-        font-size: 16px;
-    }
-    
-    .location-image {
-        height: 250px;
-        margin: 15px calc(-50vw + 50%);
-    }
-}
-
-@media (max-width: 480px) {
-    .location-image {
-        height: 200px;
-        margin: 12px calc(-50vw + 50%);
-    }
-    
-    .location-card h3 {
-        margin-bottom: 20px;
-    }
-    
-    .location-card p {
-        margin-bottom: 10px;
-    }
-}
-
-
-
 /* Секция дресс-кода */
 .dress-code-description {
     text-align: center;
@@ -667,8 +458,6 @@ body {
     line-height: 1.6;
     opacity: 0.8;
 }
-
-
 
 /* Цветовая палитра */
 .color-palette {
@@ -702,8 +491,6 @@ body {
 .color-name::first-letter {
     text-transform: uppercase;
 }
-
-
 
 /* Советы по дресс-коду */
 .dress-code-tips {
@@ -740,8 +527,6 @@ body {
     opacity: 0.8;
     margin: 0;
 }
-
-
 
 /* Блок "Важно!" */
 .important-notice {
@@ -780,8 +565,6 @@ body {
     font-weight: 400;
     opacity: 0.8;
 }
-
-
 
 /* Секция подарков */
 .gifts-intro {
@@ -861,8 +644,6 @@ body {
     opacity: 0.8;
 }
 
-
-
 /* Блок с благодарностью */
 .gifts-note {
     border: 1px solid #000;
@@ -885,7 +666,6 @@ body {
     line-height: 1.6;
     opacity: 0.8;
 }
-
 
 /* Секция FAQ */
 .faq {
@@ -970,7 +750,6 @@ body {
     font-size: 0.95em;
     opacity: 0.8;
 }
-
 
 /* Секция подтверждения присутствия */
 .rsvp {
@@ -1170,13 +949,94 @@ button:hover {
     font-size: 0.95em;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+/* =========================================== */
+/* УНИВЕРСАЛЬНАЯ СИСТЕМА PNG ИЗОБРАЖЕНИЙ */
+/* =========================================== */
+
+.png-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9997;
+    pointer-events: none;
 }
 
+.png-element {
+    position: absolute;
+    z-index: 9998;
+    pointer-events: none;
+    image-rendering: high-quality;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
 
-/* Анимации */
+/* Позиции для десктопов */
+.png-pos-10-5 { top: 10vh; left: 5%; }
+.png-pos-20-10 { top: 20vh; left: 10%; }
+.png-pos-5-90 { top: 5vh; left: 90%; }
+.png-pos-80-8 { top: 80vh; left: 8%; }
+.png-pos-70-85 { top: 70vh; left: 85%; }
+.png-pos-15-50 { top: 15vh; left: 50%; transform: translateX(-50%); }
+.png-pos-50-20 { top: 50vh; left: 20%; transform: translateY(-50%); }
+.png-pos-30-80 { top: 30vh; left: 80%; }
+.png-pos-60-15 { top: 60vh; left: 15%; }
+.png-pos-25-70 { top: 25vh; left: 70%; }
+.png-pos-75-25 { top: 75vh; left: 25%; }
+
+.png-pos-200-50 { top: 200px; left: 50px; }
+.png-pos-500-300 { top: 500px; left: 300px; }
+.png-pos-800-100 { top: 800px; left: 100px; }
+.png-pos-1200-200 { top: 1200px; left: 200px; }
+.png-pos-1500-400 { top: 1000px; right: 50px; }
+.png-pos-2000-200 { top: 1000px; left: 50px; }
+
+/* Размеры для десктопов */
+.png-size-xs { width: 80px; height: 60px; }
+.png-size-sm { width: 120px; height: 90px; }
+.png-size-md { width: 180px; height: 135px; }
+.png-size-lg { width: 250px; height: 190px; }
+.png-size-xl { width: 350px; height: 260px; }
+.png-size-xxl { width: 500px; height: 375px; }
+
+/* Прозрачность */
+.png-opacity-10 { opacity: 0.1; }
+.png-opacity-20 { opacity: 0.2; }
+.png-opacity-30 { opacity: 0.3; }
+.png-opacity-40 { opacity: 0.4; }
+.png-opacity-50 { opacity: 0.5; }
+.png-opacity-60 { opacity: 0.6; }
+.png-opacity-70 { opacity: 0.7; }
+.png-opacity-80 { opacity: 0.8; }
+.png-opacity-90 { opacity: 0.9; }
+.png-opacity-100 { opacity: 1; }
+
+/* Изображения */
+.png-img-1 { background-image: url('./images/1.png'); }
+.png-img-10 { background-image: url('./images/29.png'); }
+.png-img-3 { background-image: url('./images/3.png'); }
+.png-img-4 { background-image: url('./images/4.png'); }
+.png-img-5 { background-image: url('./images/5.png'); }
+.png-img-6 { background-image: url('./images/6.png'); }
+.png-img-7 { background-image: url('./images/7.png'); }
+
+/* Трансформации */
+.png-rotate-45 { transform: rotate(45deg); }
+.png-rotate-90 { transform: rotate(90deg); }
+.png-rotate-180 { transform: rotate(180deg); }
+.png-rotate-270 { transform: rotate(270deg); }
+.png-flip-x { transform: scaleX(-1); }
+.png-flip-y { transform: scaleY(-1); }
+
+/* =========================================== */
+/* АНИМАЦИИ */
+/* =========================================== */
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -1249,54 +1109,41 @@ button:hover {
     animation-delay: 0.2s;
 }
 
-/* Адаптивность */
+/* =========================================== */
+/* АДАПТИВНОСТЬ ДЛЯ СМАРТФОНОВ */
+/* =========================================== */
+
 @media (max-width: 768px) {
-    .transport-options {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
+    /* PNG изображения для смартфонов */
+    .png-size-xs { width: 60px; height: 45px; }
+    .png-size-sm { width: 90px; height: 68px; }
+    .png-size-md { width: 120px; height: 90px; }
+    .png-size-lg { width: 160px; height: 120px; }
+    .png-size-xl { width: 200px; height: 150px; }
+    .png-size-xxl { width: 250px; height: 190px; }
     
-    .map-buttons {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        margin-top: 30px;
-    }
+    .png-pos-10-5 { top: 8%; left: 3%; }
+    .png-pos-20-10 { top: 18%; left: 5%; }
+    .png-pos-5-90 { top: 4%; left: 92%; }
+    .png-pos-80-8 { top: 82%; left: 5%; }
+    .png-pos-70-85 { top: 72%; left: 88%; }
+    .png-pos-15-50 { top: 12%; left: 50%; transform: translateX(-50%); }
+    .png-pos-50-20 { top: 50%; left: 15%; transform: translateY(-50%); }
+    .png-pos-30-80 { top: 28%; left: 85%; }
+    .png-pos-60-15 { top: 62%; left: 12%; }
+    .png-pos-25-70 { top: 22%; left: 75%; }
+    .png-pos-75-25 { top: 78%; left: 20%; }
     
-    .color-palette {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-    }
+    .png-pos-200-50 { top: 150px; left: 30px; }
+    .png-pos-500-300 { top: 400px; left: 200px; }
+    .png-pos-800-100 { top: 600px; left: 70px; }
+    .png-pos-1200-200 { top: 900px; left: 150px; }
+    .png-pos-1500-400 { top: 1100px; right: 30px; }
+    .png-pos-2000-200 { top: 1400px; left: 30px; }
     
-    .color-swatch {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .section-title {
-        padding-bottom: 12px;
-        margin-bottom: 40px;
-    }
-    
-    .timeline-item {
-        margin-bottom: 40px;
-    }
-    
-    .timeline-item:not(:last-child)::after {
-        margin: 30px auto;
-        height: 25px;
-    }
-    
-    .timeline-time {
-        font-size: clamp(1.8em, 8vw, 3em);
-        margin-bottom: 12px;
-    }
-    
-    .timeline-content h3 {
-        font-size: clamp(1.2em, 5vw, 1.4em);
-        margin-bottom: 15px;
-    }
-    
-    /* Секция локации адаптивность */
+    .png-mobile-hide { display: none; }
+
+    /* Секция локации для смартфонов */
     .location-section {
         padding: clamp(30px, 6vw, 50px) 15px;
     }
@@ -1324,6 +1171,12 @@ button:hover {
         margin: 12px calc(-50vw + 50%);
     }
     
+    .transport-options {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 25px;
+    }
+    
     .transport-option {
         padding: 20px 12px;
     }
@@ -1343,12 +1196,59 @@ button:hover {
         margin-bottom: 4px;
     }
     
+    .map-buttons {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 30px;
+    }
+    
     .map-btn {
         padding: 16px 20px;
         font-size: 16px;
     }
+
+    /* Таймер для смартфонов */
+    .countdown-item {
+        padding: 15px 10px;
+    }
     
-    /* FAQ адаптивность */
+    .countdown-item:not(:last-child)::after {
+        right: -5px;
+        height: 30px;
+    }
+
+    /* Программа дня для смартфонов */
+    .timeline-item {
+        margin-bottom: 40px;
+    }
+    
+    .timeline-item:not(:last-child)::after {
+        margin: 30px auto;
+        height: 25px;
+    }
+    
+    .timeline-time {
+        font-size: clamp(1.8em, 8vw, 3em);
+        margin-bottom: 12px;
+    }
+    
+    .timeline-content h3 {
+        font-size: clamp(1.2em, 5vw, 1.4em);
+        margin-bottom: 15px;
+    }
+
+    /* Цветовая палитра для смартфонов */
+    .color-palette {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+    
+    .color-swatch {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* FAQ для смартфонов */
     .faq-question {
         padding: 20px;
     }
@@ -1368,8 +1268,8 @@ button:hover {
     .faq-intro {
         margin-bottom: 40px;
     }
-    
-    /* Форма RSVP адаптивность */
+
+    /* Форма RSVP для смартфонов */
     .form-group {
         padding: 0 20px;
         margin-bottom: 25px;
@@ -1388,46 +1288,27 @@ button:hover {
     }
 }
 
+/* Дополнительные корректировки для очень маленьких смартфонов (до 480px) */
 @media (max-width: 480px) {
-    .color-palette {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
+    .png-size-xs { width: 50px; height: 38px; }
+    .png-size-sm { width: 70px; height: 53px; }
+    .png-size-md { width: 90px; height: 68px; }
+    .png-size-lg { width: 120px; height: 90px; }
+    .png-size-xl { width: 150px; height: 113px; }
+    .png-size-xxl { width: 180px; height: 135px; }
     
-    .color-swatch {
-        width: 55px;
-        height: 55px;
-    }
+    .png-pos-10-5 { top: 7%; left: 2%; }
+    .png-pos-20-10 { top: 17%; left: 3%; }
+    .png-pos-5-90 { top: 3%; left: 94%; }
+    .png-pos-80-8 { top: 83%; left: 3%; }
     
-    .section-title {
-        padding-bottom: 10px;
-        margin-bottom: 35px;
-    }
-    
-    .section-title::after {
-        height: 0.5px;
-    }
-    
-    .timeline-item {
-        margin-bottom: 35px;
-    }
-    
-    .timeline-item:not(:last-child)::after {
-        margin: 25px auto;
-        height: 20px;
-    }
-    
-    .timeline-time {
-        font-size: clamp(1.6em, 8vw, 2.5em);
-        margin-bottom: 10px;
-    }
-    
-    .timeline-content h3 {
-        font-size: clamp(1.1em, 5vw, 1.3em);
-        margin-bottom: 12px;
-    }
-    
-    /* Секция локации адаптивность для мобильных */
+    .png-pos-200-50 { top: 120px; left: 20px; }
+    .png-pos-500-300 { top: 350px; left: 150px; }
+    .png-pos-800-100 { top: 500px; left: 50px; }
+    .png-pos-1200-200 { top: 700px; left: 100px; }
+    .png-pos-1500-400 { top: 900px; right: 20px; }
+    .png-pos-2000-200 { top: 1100px; left: 20px; }
+
     .location-section {
         padding: clamp(25px, 5vw, 40px) 12px;
     }
@@ -1493,75 +1374,11 @@ button:hover {
     .map-btn i {
         font-size: 1.1em;
     }
-    
-    .gift-reason {
-        flex-direction: column;
-        gap: 8px;
-    }
-    
-    /* FAQ адаптивность для мобильных */
-    .faq-question {
-        padding: 18px;
-    }
-    
-    .faq-question h3 {
-        font-size: 0.95em;
-    }
-    
-    .faq-answer {
-        padding: 0 18px;
-    }
-    
-    .faq-item.active .faq-answer {
-        padding: 0 18px 18px;
-    }
-    
-    .faq-intro {
-        margin-bottom: 35px;
-    }
-    
-    .faq-answer p {
-        font-size: 0.9em;
-    }
-    
-    /* Форма RSVP адаптивность для мобильных */
-    .form-group {
-        padding: 0 15px;
-        margin-bottom: 20px;
-    }
-    
-    .guest-section {
-        padding: 18px 0;
-    }
-    
-    input[type="text"] {
-        padding: 10px 12px;
-        font-size: 0.95em;
-    }
-    
-    .checkbox-label {
-        font-size: 0.95em;
-        padding: 6px 0;
-    }
-    
-    button {
-        padding: 12px 16px;
-        font-size: 0.95em;
-    }
-    
-    .submit-btn {
-        padding: 14px 18px;
-        font-size: 1em;
-    }
-    
-    .allergy-input-container {
-        padding: 12px;
-    }
-    
-    .allergy-input-container input[type="text"] {
-        padding: 8px 10px;
-    }
 }
+
+/* =========================================== */
+/* СПЕЦИАЛЬНЫЕ НАСТРОЙКИ */
+/* =========================================== */
 
 /* Улучшения для touch-устройств */
 @media (hover: none) {
